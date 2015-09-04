@@ -18,6 +18,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 		.state('home', {url:'/', templateUrl: 'partials/home.html', controller: 'PageCtrl'})		
 		.state('about', {url:'/about', templateUrl: 'partials/about.html', controller: 'PageCtrl'})
 		.state('classes', {url:'/classes', templateUrl: 'partials/classes.html', controller: 'PageCtrl'})
+		.state('childcare', {url:'/childcare', templateUrl: 'partials/childcare.html', controller: 'PageCtrl'})
 		.state('pricing', {url:'/pricing', templateUrl: 'partials/pricing.html', controller: 'PageCtrl'})
 		.state('contact', {url:'/contact', templateUrl: 'partials/contact.html', controller: 'PageCtrl'})
 		.state('404', {url:'/404', templateUrl: 'partials/404.html', controller: 'PageCtrl'});
