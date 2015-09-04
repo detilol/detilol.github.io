@@ -15,7 +15,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise('/404');
 	
 	$stateProvider
-		.state('home', {url:'/', templateUrl: 'partials/home.html', controller: 'PageCtrl'})
+		.state('home', {url:'/', templateUrl: 'partials/home.html', controller: 'PageCtrl'})		
 		.state('about', {url:'/about', templateUrl: 'partials/about.html', controller: 'PageCtrl'})
 		.state('classes', {url:'/classes', templateUrl: 'partials/classes.html', controller: 'PageCtrl'})
 		.state('pricing', {url:'/pricing', templateUrl: 'partials/pricing.html', controller: 'PageCtrl'})
@@ -38,6 +38,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
     
     .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
     */
+    $locationProvider.html5Mode({
+        enabled:true,
+        requireBase: true
+    });
+
+    $locationProvider.hashPrefix('!');
+      
+    // Don't strip trailing slashes from calculated URLs
+    //  $resourceProvider.defaults.stripTrailingSlashes = false;
 };
 
 /**
