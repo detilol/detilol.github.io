@@ -1,0 +1,138 @@
+/* 
+Custom CSS for...
+'Modern Business' HTML Theme by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+/* Global Styles */
+/* line 12, stdin */
+html, body {
+  height: 100%; }
+
+/* line 16, stdin */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px; }
+
+/* line 21, stdin */
+.dropdown {
+  cursor: pointer; }
+
+/* line 28, stdin */
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+  margin-bottom: 30px; }
+
+/* line 32, stdin */
+.tab-pane {
+  margin-top: 15px; }
+
+/* Page Sections */
+/* line 38, stdin */
+.section,
+.section-colored {
+  padding: 50px 0; }
+
+/* line 42, stdin */
+.section-colored {
+  background-color: #e1e1e1;
+  /* change this to change the background color of a colored section */ }
+
+/* line 47, stdin */
+.sidebar {
+  margin-top: 40px; }
+
+/* line 51, stdin */
+.sidebar ul {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #cccccc; }
+
+/* Half Page Height Carousel Customization */
+/* line 58, stdin */
+.carousel {
+  height: 20em; }
+
+/* line 64, stdin */
+.item,
+.active,
+.carousel-inner {
+  height: 100%; }
+
+/* line 68, stdin */
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover; }
+
+/* Social Icons Styles */
+/* line 76, stdin */
+.list-social-icons {
+  margin-bottom: 45px; }
+
+/* line 80, stdin */
+.tooltip-social a {
+  text-decoration: none;
+  color: inherit; }
+
+/* line 85, stdin */
+.facebook-link a:hover {
+  color: #3b5998; }
+
+/* line 89, stdin */
+.vk-link a:hover {
+  color: #3b5998; }
+
+/* line 93, stdin */
+.linkedin-link a:hover {
+  color: #007fb1; }
+
+/* line 97, stdin */
+.twitter-link a:hover {
+  color: #39a9e0; }
+
+/* line 101, stdin */
+.google-plus-link a:hover {
+  color: #d14836; }
+
+/* Service Page Styles */
+/* line 106, stdin */
+.service-icon {
+  font-size: 50px; }
+
+/* 404 Page Styles */
+/* line 111, stdin */
+.error-404 {
+  font-size: 8em; }
+
+/* Pricing Page Styles */
+/* line 116, stdin */
+.price {
+  font-size: 4em; }
+
+/* line 120, stdin */
+.price-cents {
+  vertical-align: super;
+  font-size: 50%; }
+
+/* line 125, stdin */
+.price-month {
+  font-size: 35%;
+  font-style: italic; }
+
+/* Footer Styles */
+/* line 131, stdin */
+footer {
+  margin: 50px 0; }
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  /* line 138, stdin */
+  .carousel {
+    height: 70%;
+    /* increases the carousel height so it looks good on phones */ } }
+
+/*# sourceMappingURL=app.css.map */
