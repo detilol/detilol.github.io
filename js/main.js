@@ -3,9 +3,14 @@
 	angular.module('detilolSite', ['ui.router', 'ui.bootstrap', 'ngAnimate'])
 		.controller('PageCtrl', PageCtrl)
 		.controller('BlogCtrl', BlogCtrl)
+		.controller('CarouselCtrl', CarouselCtrl)
+		.controller('MapCtrl', MapCtrl)
+		.constant('L', window.L)
 		.config(config);
 	
 	config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+	CarouselCtrl.$inject = ['$scope'];
+	MapCtrl.$inject = ['L'];
 
 /**
  * Configure the Routes
@@ -20,7 +25,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 		.state('classes', {url:'/classes', templateUrl: 'partials/classes.html', controller: 'PageCtrl'})
 		.state('childcare', {url:'/childcare', templateUrl: 'partials/childcare.html', controller: 'PageCtrl'})
 		.state('pricing', {url:'/pricing', templateUrl: 'partials/pricing.html', controller: 'PageCtrl'})
-		.state('contact', {url:'/contact', templateUrl: 'partials/contact.html', controller: 'PageCtrl'})
+		.state('contact', {url:'/contact', templateUrl: 'partials/contact.html', controller: 'MapCtrl'})
 		.state('404', {url:'/404', templateUrl: 'partials/404.html', controller: 'PageCtrl'});
 	
 		/*
@@ -72,5 +77,65 @@ function PageCtrl() {
     selector: "a[data-toggle=tooltip]"
   })
   */
+}
+
+function CarouselCtrl($scope){
+	$scope.myInterval = 5000;
+	$scope.noWrapSlides = false;
+	$scope.slides = [
+	   {
+		   image: '//placekitten.com/601/300',
+		   text: 'Kitty'
+	   },
+	   {
+		   image: '//placekitten.com/602/300',
+		   text: 'Мурка'
+	   },
+	   {
+		   image: '//placekitten.com/603/300',
+		   text: 'Васька'
+	   },
+	];
+}
+
+function MapCtrl(L){
+	//var map = L.map('map').setView([55, 37], 13);
+/*
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(map);
+
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	L.marker([55.8234706794, 37.3707702755]).addTo(map)
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+	
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(map);
+	}
+
+	map.on('click', onMapClick);
+*/
+	 var myMap = L.map('map', {scrollWheelZoom: true, zoomControl: false});
+	  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	  var osmAttrib = 'Map data © OpenStreetMap contributors';
+	  var osm = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 20, attribution: osmAttrib});
+	  myMap.setView(new L.LatLng(55.8234706794, 37.3707702755), 15);
+	  myMap.addLayer(osm);
+	  myMap.addControl(L.control.zoom({position: 'bottomleft'}));
+	  L.marker([55.8234706794, 37.3707702755]).addTo(myMap)
+		.bindPopup("<strong>&#x263a; Улыбашки!</strong>").openPopup();
 }
 })();
