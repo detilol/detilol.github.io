@@ -14,14 +14,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="детский клуб Улыбашки" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!-- inject:css -->
-	<link rel="stylesheet" href="assets/vendor/css/theme.css"/>
-	<link rel="stylesheet" href="css/app.css"/>
-	<!-- endinject -->	
-	<!-- bower:css -->
-	<link rel="stylesheet" href="assets/vendor/css/leaflet.css" />
-	<!-- endbower -->
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 	<base href="/" />
 </head>
 <body data-ng-app="detilolSite">
@@ -34,15 +26,26 @@
 <div data-ng-include='"templates/header.html"'></div>
 <div data-ui-view=""></div>
 <div data-ng-include='"templates/footer.html"'></div>
-<!-- Vendor: Javascripts, then Angular -->
-<!-- bower:js -->
-<script src="assets/vendor/js/angular.js"></script>
-<script src="assets/vendor/js/angular-animate.js"></script>
-<script src="assets/vendor/js/ui-bootstrap-tpls.js"></script>
-<script src="assets/vendor/js/angular-ui-router.js"></script>
-<script src="assets/vendor/js/leaflet.js"></script>
-<!-- endbower -->
-<!-- Our Website Javascripts -->
-<script src="js/main.js"></script>
 </body>
 </html>
+<!-- bower:css -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/leaflet/0.7.3/leaflet.css"/>
+<!-- endbower -->
+<!-- inject:css -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootswatch/3.3.5/cerulean/bootstrap.min.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.4.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="css/app.css"/>
+<!-- endinject -->
+<!-- Vendor: Javascripts, then Angular -->
+<!-- bower:js -->
+<script src="//cdn.jsdelivr.net/angularjs/1.4.2/angular.min.js"></script>
+<script src="//cdn.jsdelivr.net/angularjs/1.4.2/angular-animate.min.js"></script>
+<script src="//cdn.jsdelivr.net/angular.bootstrap/0.13.3/ui-bootstrap-tpls.min.js"></script>
+<script src="//cdn.jsdelivr.net/angular.ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script src="//cdn.jsdelivr.net/leaflet/0.7.3/leaflet.js"></script>
+<!-- endbower -->
+<!-- Our Website Javascripts -->
+<!-- inject:js -->
+<script src="js/app.min.js"></script>
+<script src="js/app.constants.js"></script>
+<!-- endinject -->

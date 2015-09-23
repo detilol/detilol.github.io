@@ -4,7 +4,35 @@
 'use strict';
 angular.module("detilolSite")
 
-.constant("ENV", "dev")
+.constant("ENV", "prod")
+
+.constant("BLOBS", {
+	"childcare": {
+		"halfsad": {
+			"src": "/img/halfsad.png"
+		},
+		"minisad": {
+			"src": "/img/minisad.png"
+		}
+	},
+	"klasses": {
+		"poznavashki": {
+			"src": "/img/poznavashki.png"
+		},
+		"razvivashki": {
+			"src": "/img/razvivashki.png"
+		},
+		"chitalka": {
+			"src": "/img/chitalka.png"
+		},
+		"shkola": {
+			"src": "/img/shkola.png"
+		},
+		"dz": {
+			"src": "/img/dz.png"
+		}
+	}
+})
 
 ;
 })();
