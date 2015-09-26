@@ -8,7 +8,7 @@
 	
 	config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-	PageCtrl.$inject = ['$scope', 'BLOBS'];
+	PageCtrl.$inject = ['$scope', 'BLOBS', 'timetableService'];
 
 /**
  * Configure the Routes
@@ -26,23 +26,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider) {
 		.state('contact', {url:'/contact', templateUrl: 'partials/contact.html', controller: 'MapCtrl'})
 		.state('404', {url:'/404', templateUrl: 'partials/404.html', controller: 'PageCtrl'});
 	
-		/*
-  $routeProvider
-    
-    .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-
-    .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
-    .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
-    .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
-    .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
-    .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
-    
-    .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
-    .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
-    
-    .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
-    */
-    $locationProvider.html5Mode({
+	$locationProvider.html5Mode({
         enabled:true,
         requireBase: true
     });
@@ -65,8 +49,9 @@ function BlogCtrl() {
  * @param $scope
  * @param BLOBS constant links to BLOB resources (images, video) whether in cloud or local
  */
-function PageCtrl($scope, BLOBS) {
+function PageCtrl($scope, BLOBS, timetableService) {
   $scope.blobs = BLOBS;
+  $scope.timetable = timetableService.getTimetable();
   /*
   // Activates the Carousel
   $('.carousel').carousel({
@@ -81,32 +66,25 @@ function PageCtrl($scope, BLOBS) {
 
 
 })();
-(function(){
-	'user strict';
-	angular.module('detilolSite')
-		.controller('CarouselCtrl', CarouselCtrl);
-	
-	CarouselCtrl.$inject = ['$scope'];
-	function CarouselCtrl($scope){
-		$scope.myInterval = 5000;
-		$scope.noWrapSlides = false;
-		$scope.slides = [
-		   {
-			   image: '//placekitten.com/601/300',
-			   text: 'Kitty'
-		   },
-		   {
-			   image: '//placekitten.com/602/300',
-			   text: 'Мурка'
-		   },
-		   {
-			   image: '//placekitten.com/603/300',
-			   text: 'Васька'
-		   },
-		];
-	}
-})();
 
+(function(){
+	'use strict';
+	angular
+		.module('detilolSite')
+		.factory('helloService', HelloService);
+	
+	function HelloService(){
+		var service = {
+			sayHello : sayHello
+		};
+		return service;
+		
+		function sayHello(){
+			return 'Hello world!';
+		}
+	      
+	};
+})();
 ;(function(){
 	'user strict';
 	angular.module('detilolSite')
@@ -176,10 +154,16 @@ function PageCtrl($scope, BLOBS) {
 	TimetableService.$inject = ['$http', '$log', '$q'];
 	
 	function TimetableService($http, $log, $q){
-
-	    var service = {
-	        getData: getData
+		var data = null;
+	    var service = {	    		
+	        getData: getData,
+	        getTimetable: getTimetable
 	    };
+		
+		getData('/data/timetable.json').then(function(response){
+			data = response.data;
+		});
+		
 	    return service;
 	    /**
 	     * @param url http get URL
@@ -196,6 +180,10 @@ function PageCtrl($scope, BLOBS) {
 	    		return promise;
 	    	}
 	    	return $http.get(url);	    	
-	    }	    
+	    }
+	    
+	    function getTimetable(){
+	    	return data;
+	    }
 	};
 })();

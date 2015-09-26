@@ -49,6 +49,29 @@
 							<p>Незнакомая обстановка, новые игрушки и даже поведение других детей могут вызвать разнообразные реакции начинающего ученика. Помните, что занятие невозможно проводить без Вашего активного участия, т.к. именно близкие являются эталоном поведения и создают чувство защищённости.</p>
 							<p><strong>Выключайте мобильные телефоны!</strong> Детям раннего возраста трудно сконцентрировать внимание, а звонящий телефон отвлекает их от познавателного процесса.</p>
 							<p class="lead">НА ЗАНЯТИЯХ НЕОБХОДИМО ИМЕТЬ СМЕННУЮ ОБУВЬ!</p>
+							<table class="table table-bordered">
+								<caption>Расписание</caption>
+								<thead>
+									<tr>
+										<th>Возраст ребёнка</th>
+										<th>Пн.</th>
+										<th>Вт.</th>
+										<th>Ср.</th>
+										<th>Чт.</th>
+										<th>Пт.</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-ng-repeat="agenda in timetable.poznavashki">
+										<td data-ng-bind="agenda.rowLabel">Label</td>
+										<td data-ng-bind="agenda.data.day1"></td>
+										<td data-ng-bind="agenda.data.day2"></td>
+										<td data-ng-bind="agenda.data.day3"></td>
+										<td data-ng-bind="agenda.data.day4"></td>
+										<td data-ng-bind="agenda.data.day5"></td>
+									</tr>
+								</tbody>
+							</table>
     			 		</div>    			 	
     			 	</div>
     			 </tab>    			 
@@ -70,10 +93,34 @@
 		    			 	</ul>
 		    			 	<p>Гармоничное развитие возможно только тогда, когда различные  составляющие развития не преобладают друг над другом, т.е. в определенный период роста и развития дошкольника необходимому уделяется необходимое время. Поэтому мы обращаем особое внимание на то, чтобы в каждой теме сочетались и теория  (объяснение, просмотр картинок), и практическое воплощение приобретенных ребенком знаний. Послушать сказку  и обыграть ее,  нарисовать персонажей  и сыграть в подвижную игру на сказочную тему, составить из Кубиков Зайцева имена героев. Мы стараемся включить в деятельность ребенка по освоению темы как можно больше элементов.</p>
 		    			 	<p>Используемые на одном занятии задания и упражнения тщательно подобраны для дошкольников конкретного возраста.</p>
+							<table class="table table-bordered">
+								<caption>Расписание</caption>
+								<thead>
+									<tr>
+										<th>Возраст ребёнка</th>
+										<th>Пн.</th>
+										<th>Вт.</th>
+										<th>Ср.</th>
+										<th>Чт.</th>
+										<th>Пт.</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr data-ng-repeat="agenda in timetable.razvivashki">
+										<td data-ng-bind="agenda.rowLabel">Label</td>
+										<td data-ng-bind="agenda.data.day1"></td>
+										<td data-ng-bind="agenda.data.day2"></td>
+										<td data-ng-bind="agenda.data.day3"></td>
+										<td data-ng-bind="agenda.data.day4"></td>
+										<td data-ng-bind="agenda.data.day5"></td>
+									</tr>
+								</tbody>
+							</table>
 	    			 	</div>
 	    			 	<div class="col-lg-4 col-md-4">
 	                		<img class="img-responsive" data-ng-src="{{blobs.klasses.razvivashki.src}}">
 	            		</div>
+						
             		</div>
     			 </tab>
     			 <tab heading="Читалка" id="chitalka">
