@@ -6,6 +6,8 @@ angular.module("detilolSite")
 
 .constant("ENV", "prod")
 
+.constant("GS_ID", "1UNXtCmrfjtByDeQNrAh6l4LVfLFaqPzb0ge7IImFA10")
+
 .constant("BLOBS", {
 	"childcare": {
 		"halfsad": {
@@ -30,6 +32,44 @@ angular.module("detilolSite")
 		},
 		"dz": {
 			"src": "/img/dz.png"
+		}
+	},
+	"home": {
+		"t1": {
+			"src": "/photobank/thumbnails/thumb-0.jpg"
+		},
+		"t2": {
+			"src": "/photobank/thumbnails/thumb-2.jpg"
+		},
+		"t3": {
+			"src": "/photobank/thumbnails/thumb-3.jpg"
+		},
+		"t4": {
+			"src": "/photobank/thumbnails/thumb-4.jpg"
+		},
+		"t5": {
+			"src": "/photobank/thumbnails/thumb-5.jpg"
+		},
+		"t6": {
+			"src": "/photobank/thumbnails/thumb-6.jpg"
+		},
+		"t7": {
+			"src": "/photobank/thumbnails/thumb-7.jpg"
+		},
+		"t8": {
+			"src": "/photobank/thumbnails/thumb-8.jpg"
+		},
+		"t9": {
+			"src": "/photobank/thumbnails/thumb-9.jpg"
+		},
+		"t10": {
+			"src": "/photobank/thumbnails/thumb-10.jpg"
+		},
+		"t11": {
+			"src": "/photobank/thumbnails/thumb-11.jpg"
+		},
+		"t12": {
+			"src": "/photobank/thumbnails/thumb-12.jpg"
 		}
 	}
 })

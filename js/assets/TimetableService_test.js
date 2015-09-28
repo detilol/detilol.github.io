@@ -38,7 +38,7 @@ describe('Test JSON data format', function(){
 			//expext(timeTable.poznavashki).toBeDefined();
 		});
 		
-		it('Load JSON - OK', function(){
+		xit('Load JSON - OK', function(){
 			var testUrl = 'http://example.com/data/timetable';			
 			$httpBackend.expectGET(testUrl).respond(200, {
 				"poznavashki":[
