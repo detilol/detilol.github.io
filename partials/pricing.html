@@ -3,104 +3,23 @@
     <div class="row">
 
         <div class="col-lg-12">
-            <h1 class="page-header">Цены
-                <small>на занятия с детьми</small>
+            <h1 class="page-header">Расписание <small>занятий</small> и цены
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/">Главная</a>
                 </li>
-                <li class="active">Цены</li>
+                <li class="active">Расписание и цены</li>
             </ol>
         </div>
 
     </div>
 
     <div class="row">
-
-        <div class="col-sm-3">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <a data-ui-sref="classes({tab:'poznavashki'})" href="/classes?tab=poznavashki"><strong>Познавашки</strong></a>
-                </div>
-                <div class="panel-body">
-                    <h3 class="panel-title price">640                        
-                        <span class="price-month">руб.</span>
-                    </h3>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">40 минут</li>
-                    <li class="list-group-item">1&mdash;3 года</li>
-                    <li class="list-group-item">4 занятия: 2400 руб.<br /><small>600 руб. / занятие</small></li>
-                    <li class="list-group-item">8 занятий: 4400 руб.<br />550 руб. / занятие</li>
-                    <li class="list-group-item"><a class="btn btn-primary">Подробнее</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <a data-ui-sref="classes({tab:'razvivashki'})" href="/classes?tab=razvivashki"><strong>Развивашки</strong></a>
-                </div>
-                <div class="panel-body">
-                    <h3 class="panel-title price">650
-                        <span class="price-month">руб.</span>
-                    </h3>
-                </div>
-                <ul class="list-group">
-                	<li class="list-group-item">50 минут</li>
-                    <li class="list-group-item">3&mdash;5 лет</li>
-                    <li class="list-group-item">4 занятия: 2400 руб.<br /><small>600 руб. / занятие</small></li>
-                    <li class="list-group-item">8 занятий: 4400 руб.<br />550 руб. / занятие</li>
-                    <li class="list-group-item"><a class="btn btn-primary">Подробнее</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <strong>Premium <span class="label label-success">Best Value!</span></strong>
-                </div>
-                <div class="panel-body">
-                    <h3 class="panel-title price">$29
-                        <span class="price-cents">99</span>
-                        <span class="price-month">mo.</span>
-                    </h3>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Unlimited</li>
-                    <li class="list-group-item">50 GB of Storage</li>
-                    <li class="list-group-item">Up to 1000 Users</li>
-                    <li class="list-group-item">100 GB Bandwidth</li>
-                    <li class="list-group-item">Security Suite</li>
-                    <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <strong>Ultimate</strong>
-                </div>
-                <div class="panel-body">
-                    <h3 class="panel-title price">$49
-                        <span class="price-cents">99</span>
-                        <span class="price-month">mo.</span>
-                    </h3>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">Unlimited</li>
-                    <li class="list-group-item">150 GB of Storage</li>
-                    <li class="list-group-item">Unlimited</li>
-                    <li class="list-group-item">500 GB Bandwidth</li>
-                    <li class="list-group-item">Security Suite</li>
-                    <li class="list-group-item"><a class="btn btn-primary">Sign Up Now!</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <div class="col-lg-12">
+            <google-sheet data-worksheet="1T4kxP37tg39xfPdHeu-kyuOjdmOC-sD4WRjiIq_08tY" data-sheet="Sheet1">
+                <table class="table table-bordered"><tr data-ng-repeat="row in gs.data track by $index"><td data-ng-repeat="cell in row track by $index">{{cell}}</td></tr></table>
+            </google-sheet>
+        </div> 
 
     </div>
 
